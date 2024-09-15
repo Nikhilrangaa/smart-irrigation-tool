@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Irrigation System</title>
+  <!-- Bulma CSS Framework -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include TensorFlow.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero is-info is-bold">
+    <div class="hero-background">
+      <img src="https://images.unsplash.com/photo-1560692903-26d4b2f7e2fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agriculture Background" class="hero-image">
+    </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Predictive Analytics for Smart Irrigation
+        </h1>
+        <h2 class="subtitle">
+          Optimize water usage and maximize crop yields with AI-powered insights
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="section">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <!-- Input Form -->
+          <div class="box">
+            <h3 class="title is-4 has-text-centered">Enter Current Conditions</h3>
+            <div class="field">
+              <label class="label">Soil Moisture (%)</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="soilMoisture" min="0" max="100" value="50">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-tint"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Temperature (°C)</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="temperature" min="-20" max="50" value="25">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-thermometer-half"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Humidity (%)</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="humidity" min="0" max="100" value="50">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-water"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Weather Forecast</label>
+              <div class="control has-icons-left">
+                <div class="select">
+                  <select id="weatherForecast">
+                    <option value="0">Sunny</option>
+                    <option value="0.5">Cloudy</option>
+                    <option value="1">Rain Expected</option>
+                  </select>
+                </div>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-cloud-sun"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control">
+                <button class="button is-link is-medium" onclick="predictIrrigation()">
+                  Predict Irrigation Need
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result Display -->
+          <div id="resultBox" class="notification is-hidden">
+            <button class="delete" onclick="document.getElementById('resultBox').classList.add('is-hidden')"></button>
+            <p id="resultText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Smart Irrigation System</strong> by <a href="https://github.com/yourusername">Your Name</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
