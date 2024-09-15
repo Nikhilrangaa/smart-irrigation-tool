@@ -32,8 +32,10 @@ body {
   margin-top: 20px;
 }
 
+/* Updated notification styles */
 .notification.is-success {
   background-color: #dff0d8;
+  color: #000000; /* Set text color to black */
 }
 
 .notification.is-danger {
